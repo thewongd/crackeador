@@ -1,0 +1,28 @@
+No nos acordamos de nuestra contraseña, pero sabemos que tenía 10 letras y sí que recordamos las 6 últimas letras. También sabemos el *hash* de nuestra contraseña olvidada. Explica si habría alguna forma de recuperar dicha contraseña y, en su caso, cómo lo harías.
+
+Para convertir este ejercicio teórico en un caso práctico, suponer que un atacante ha conseguido la siguiente información adicional:
+
+        Las 6 últimas letras de la contraseña son: p4sswd
+        La contraseña solamente utiliza caracteres alfanuméricos en minúsculas: de 'a' a 'z' y de '0' a '9'.
+        El *hash* MD5 de la contraseña es: 2b51a4287ea2c750614f9eccfd505416
+
+Los estudiantes deben ponerse en el lugar del atacante y:
+
+    -responder a la pregunta planteada en el examen
+    -realizar un programa original que calcule la contraseña (no se aceptarán soluciones basadas en 
+     herramientas disponibles en Internet, como Jonh the Ripper o similares)
+     obtener la contraseña original.
+
+Nota: podrá usarse cualquier lenguaje o herramienta de programación.
+
+RESPUESTA:
+
+Lo normal es que no podamos obtener la contraseña, ya que un hash seguro sirve para encriptar la contraseña y que un atacante no 
+consiga descubrirla si obtiene nuestra contraseña en alguna comunicación.
+Pero en este caso sabemos 6 letras de la contraseña y debemos de probar con 4 caracteres alfanúmericos más las 6 últimas letras 
+conocidas.
+Si consideramos que utilizamos el alfabeto inglés tenemos 26 letras más 10 carácteres tenemos 36 elevado a 4 posibles contraseñas 
+que es: 1679616 posibilidades. Para un ordenador esto no es mucho, por lo que podemos atacar el hash y es lo 
+que haremos con el programa prog.py y luego utilizaremos pruebasucia.py para comprobar el funcionamiento de prog.py.
+Hay que hacer un programa que calcule el hash con todas esas posibles contraseñas y la contraseña que se adecue al hash es nuestra solución.
+ 
